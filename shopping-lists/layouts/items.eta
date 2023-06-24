@@ -1,0 +1,26 @@
+<% layout("./layout/layout.eta") %>
+
+
+<h2><%= it.name %></h2>
+
+<form method="POST" action="/lists/<%= it.listId %>/items">
+  Item: <input type="text" name="name" />
+  <input type="submit" value="Add" />
+</form>
+
+
+<h3 style="color: rgb(155,48,48);">Items in list: </h3>
+<ul data-testid="items">
+<% it.items.forEach((item) => { %>
+	<% if (!item.collected) { %>
+		<li><p><%= item.name %> </p>
+		<form method="POST" action="/lists/<%= it.listId %>/items/<%= item.id %>/collect">
+		<input type="submit" value="Mark collected!" />
+		</form>
+		</li>
+
+	<% } else { %>
+		<li><del><%= item.name %></del></li>
+	<% } %>
+<% }) %>
+</ul>

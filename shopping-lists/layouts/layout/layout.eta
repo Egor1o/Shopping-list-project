@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shared shopping lists</title>
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+</head>
+<body>
+	<nav style="
+	flex: 1;
+	text-align: right;
+
+	ul li {
+	list-style: none;
+	display: inline-block;
+	margin: 0px 20px;
+	position: relative;}
+
+	ul li a {
+	color: #fff;
+	text-decoration: 0;
+	font-family: 'Poppins';
+	font-size: 19px;}
+
+	ul li::after {
+	content: '';
+	height: 3px;
+	width: 0%;
+	background: rgb(34, 203, 204);
+	opacity: 0.5;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	transition: 0.5s;}
+
+	ul li:hover::after {
+	width: 100%;
+	}
+
+	"> <ul>
+		<li><a href="/" style="margin-left: 20px">Main page</a></li>
+		<li><a href="/lists" style="margin-left: 20px">Shopping lists</a></li>
+		</ul>
+	</nav>
+	<main class="container">
+		<%~ it.body %>
+	</main>
+</body>
+</html>

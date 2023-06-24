@@ -1,0 +1,13 @@
+<% layout("./layout/layout.eta") %>
+
+
+<h1>Main Page</h1>
+<h3 style="color: rgb(155,48,48);">Statistics:</h3>
+<% if (parseInt(it.l_number) === 0) { %>
+	<h2>No shopping lists yet</h2>
+<% } else { %>
+	<ul data-testid="statistic">
+		<li>Shopping lists: <%= it.l_number %></li>
+		<li>Shopping list items: <%= it.i_number %></li>
+	</ul>
+<% } %>
